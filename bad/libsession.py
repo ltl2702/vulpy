@@ -4,7 +4,7 @@ import base64
 
 def create(response, username):
     session = base64.b64encode(json.dumps({'username': username}).encode())
-    response.set_cookie('vulpy_session', session)
+    response.set_cookie('vulpy_session', session.decode('utf-8'))
     return response
 
 
